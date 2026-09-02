@@ -1,49 +1,101 @@
-import random
+# 🚀 CodeAlpha Python Programming Internship
 
-words = ["apple", "tiger", "house", "python", "school"]
+This repository contains the projects completed as part of my **CodeAlpha Python Programming Internship**.
 
-word = random.choice(words)
-guessed_word = ["_"] * len(word)
-guessed_letters = []
+The projects demonstrate Python programming fundamentals, problem-solving, automation, file handling, and rule-based chatbot development.
 
-max_wrong_guesses = 6
-wrong_guesses = 0
+---
 
-print("===== HANGMAN GAME =====")
-print("Guess the word one letter at a time!")
-print("You have 6 incorrect guesses.")
+## 📂 Projects
 
-while wrong_guesses < max_wrong_guesses and "_" in guessed_word:
+### 🎮 Task 1: Hangman Game
 
-    print("\nWord:", " ".join(guessed_word))
-    print("Guessed letters:", " ".join(guessed_letters))
-    print("Wrong guesses:", wrong_guesses, "/", max_wrong_guesses)
+A simple text-based Hangman game where the player guesses a hidden word one letter at a time.
 
-    guess = input("Enter a letter: ").lower()
+**Features:**
+- Random word selection
+- Letter-by-letter guessing
+- Maximum 6 incorrect guesses
+- Tracks guessed letters
+- Console-based interface
 
-    if len(guess) != 1 or not guess.isalpha():
-        print("Please enter only one letter.")
-        continue
+**File:** `CodeAlpha_HangmanGame.py`
 
-    if guess in guessed_letters:
-        print("You already guessed that letter!")
-        continue
+---
 
-    guessed_letters.append(guess)
+### 📈 Task 2: Stock Portfolio Tracker
 
-    if guess in word:
-        print("Correct guess!")
+A Python program that calculates the total investment value of stocks using manually defined stock prices.
 
-        for i in range(len(word)):
-            if word[i] == guess:
-                guessed_word[i] = guess
-    else:
-        wrong_guesses += 1
-        print("Wrong guess!")
+**Features:**
+- Stock name and quantity input
+- Hardcoded stock prices
+- Total investment calculation
+- Simple console interface
 
-if "_" not in guessed_word:
-    print("\nCongratulations!")
-    print("You guessed the word:", word)
-else:
-    print("\nGame Over!")
-    print("The correct word was:", word)
+**File:** `CodeAlpha_StockPortfolioTracker.py`
+
+---
+
+### 📁 Task 3: JPG File Automation
+
+A Python automation script that finds `.jpg` files in a folder and moves them to another folder.
+
+**Features:**
+- Automatically finds JPG files
+- Creates destination folder
+- Moves files automatically
+- Displays the number of files moved
+
+**Python Concepts:**
+- `os`
+- `shutil`
+- File handling
+
+**File:** `CodeAlpha_FileAutomation.py`
+
+---
+
+### 🤖 Task 4: Basic Chatbot
+
+A simple rule-based chatbot that responds to predefined user messages.
+
+**Features:**
+- Responds to `hello`
+- Responds to `how are you`
+- Responds to `bye`
+- Handles unknown messages
+- Interactive conversation
+
+**Python Concepts:**
+- Functions
+- `if-elif`
+- Loops
+- User input/output
+
+**File:** `CodeAlpha_BasicChatbot.py`
+
+---
+
+## 🛠️ Technologies Used
+
+- Python
+- Lists
+- Dictionaries
+- Strings
+- Functions
+- Loops
+- Conditional Statements
+- File Handling
+- `random`
+- `os`
+- `shutil`
+
+---
+
+## ▶️ How to Run
+
+Clone the repository:
+
+```bash
+git clone https://github.com/omkhande1510-prog/Codealpha_tasks.git
